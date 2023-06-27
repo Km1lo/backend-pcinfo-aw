@@ -25,7 +25,7 @@ public class ReporteController {
         reS.insert(a);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<ReporteDTO> list() {
         return reS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();

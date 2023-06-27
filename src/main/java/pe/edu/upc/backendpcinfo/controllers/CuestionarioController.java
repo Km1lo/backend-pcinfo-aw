@@ -24,7 +24,7 @@ public class CuestionarioController {
         cS.insert(c);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<CuestionarioDTO>list(){
         return cS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();

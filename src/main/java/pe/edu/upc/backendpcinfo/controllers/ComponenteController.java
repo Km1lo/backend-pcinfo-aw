@@ -27,7 +27,7 @@ public class ComponenteController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<ComponenteDTO> list(){
         return cS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();

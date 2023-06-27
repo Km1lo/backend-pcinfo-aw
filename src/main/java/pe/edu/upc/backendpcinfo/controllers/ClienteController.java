@@ -24,7 +24,7 @@ public class ClienteController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<ClienteDTO> list()
     {
         return cS.list().stream().map(x->{

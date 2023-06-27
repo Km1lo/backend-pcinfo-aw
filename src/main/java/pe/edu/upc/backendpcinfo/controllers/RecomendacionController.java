@@ -28,7 +28,7 @@ public class RecomendacionController {
         rS.insert(c);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<RecomendacionDTO> list(){
         return rS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();

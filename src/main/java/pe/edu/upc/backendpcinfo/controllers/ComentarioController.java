@@ -27,7 +27,7 @@ public class ComentarioController {
 
     //GET porque es para listar
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<ComentarioDTO> list() {
         return cmS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
