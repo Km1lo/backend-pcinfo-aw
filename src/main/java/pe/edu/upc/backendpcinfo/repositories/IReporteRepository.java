@@ -22,4 +22,13 @@ public interface IReporteRepository extends JpaRepository<Reporte,Integer> {
             "            GROUP BY a.nombre,a.apellidop\n" +
             "            ORDER BY COUNT(b.id) DESC\t", nativeQuery = true)
     List<String[]> getCountReporteByUsuario();
+
+    @Query(value = "SELECT U.nombre,U.apellidop,U.apellidom, Count(R.id) AS Cant_Reportes\n" +
+            "FROM usuario U\n" +
+            "\tinner join reporte R ON U.id = R.id_usuario\n" +
+            "where R.estado= 'Finalizado'\n" +
+            "group by u.nombre,U.apellidop,U.apellidom", nativeQuery = true)
+    List<String[]> getReporteEstadoByUsuario();
+
+
 }

@@ -59,6 +59,7 @@ pe\edu\upc\backendpcinfo\repositories\IUsuarioRepository.class
 pe\edu\upc\backendpcinfo\servicesimplement\ReporteServiceImplement.class
 pe\edu\upc\backendpcinfo\services\ICuestionarioService.class
 pe\edu\upc\backendpcinfo\dtos\CuestionarioDTO.class
+pe\edu\upc\backendpcinfo\dtos\UsuarioCuestionarioDTO.class
 pe\edu\upc\backendpcinfo\dtos\RecomendacionCuestionarioDTO.class
 pe\edu\upc\backendpcinfo\servicesimplement\ClienteServiceImplement.class
 pe\edu\upc\backendpcinfo\dtos\RoleDTO.class

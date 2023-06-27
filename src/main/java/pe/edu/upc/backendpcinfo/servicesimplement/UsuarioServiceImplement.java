@@ -3,6 +3,7 @@ package pe.edu.upc.backendpcinfo.servicesimplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.backendpcinfo.dtos.UsuarioComentarioDTO;
+import pe.edu.upc.backendpcinfo.dtos.UsuarioCuestionarioDTO;
 import pe.edu.upc.backendpcinfo.entities.Usuario;
 import pe.edu.upc.backendpcinfo.repositories.IUsuarioRepository;
 import pe.edu.upc.backendpcinfo.services.IUsuarioService;
@@ -66,5 +67,21 @@ public class UsuarioServiceImplement implements IUsuarioService {
         }
 
         return usuarioComentarioDTOs;
+    }
+
+    @Override
+    public List<UsuarioCuestionarioDTO> consultaAnthony02() {
+        List<String[]> countCuestionariosByUsuario = uR.getCuestionariosByUsuario();
+        List<UsuarioCuestionarioDTO> usuarioCuestionarioDTO = new ArrayList<>();
+
+        for (String[] data: countCuestionariosByUsuario) {
+            UsuarioCuestionarioDTO dto = new UsuarioCuestionarioDTO();
+            dto.setApellidop(data[0]);
+            dto.setApellidom(data[1]);
+            dto.setCuestionarioCount(Integer.parseInt(data[2]));
+            usuarioCuestionarioDTO.add(dto);
+        }
+
+        return usuarioCuestionarioDTO;
     }
 }

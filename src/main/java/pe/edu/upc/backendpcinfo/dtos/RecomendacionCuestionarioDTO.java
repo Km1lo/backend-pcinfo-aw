@@ -7,12 +7,12 @@ public class RecomendacionCuestionarioDTO {
 
     private String tipo_form;
 
-    private int promedio_valoracion;
+    private double promedio_valoracion;
 
     public RecomendacionCuestionarioDTO() {
     }
 
-    public RecomendacionCuestionarioDTO(int valoracion_user, String programas_used, String tipo_form, int promedio_valoracion) {
+    public RecomendacionCuestionarioDTO(int valoracion_user, String programas_used, String tipo_form, double promedio_valoracion) {
         this.valoracion_user = valoracion_user;
         this.programas_used = programas_used;
         this.tipo_form = tipo_form;
@@ -43,11 +43,11 @@ public class RecomendacionCuestionarioDTO {
         this.tipo_form = tipo_form;
     }
 
-    public int getPromedio_valoracion() {
+    public double getPromedio_valoracion() {
         return promedio_valoracion;
     }
 
-    public void setPromedio_valoracion(int promedio_valoracion) {
+    public void setPromedio_valoracion(double promedio_valoracion) {
         this.promedio_valoracion = promedio_valoracion;
     }
 }

@@ -28,4 +28,14 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer> {
             "order by c.fecha desc\n" +
             "limit 5", nativeQuery = true)
     List<String[]> getComentariosByUsuario2();
+
+
+    //CONSULTA 2 ANTHONY
+    @Query(value = "SELECT U.apellidop,U.apellidom, COUNT(*) AS TotalCuestionarios\n" +
+            "FROM usuario U\n" +
+            "JOIN cuestionario C ON U.id = C.id_usuario\n" +
+            "GROUP BY U.apellidop,U.apellidom\n" +
+            "ORDER BY TotalCuestionarios DESC\n", nativeQuery = true)
+    List<String[]> getCuestionariosByUsuario();
+
 }

@@ -12,4 +12,6 @@ public interface IReporteService{
         public Reporte listId(int id);
         public List<UsuarioReporteDTO> consulta01();
         public List<UsuarioReporteDTO> consulta02();
+
+        public List<UsuarioReporteDTO> consulta03();
 }

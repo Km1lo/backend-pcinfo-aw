@@ -43,6 +43,7 @@ C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\servicesimplement\ComentarioServiceImplement.java
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\entities\Usuario.java
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\entities\Cliente.java
+C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\dtos\UsuarioCuestionarioDTO.java
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\repositories\IRecomendacionRepository.java
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\security\JwtRequest.java
 C:\Users\camil\Desktop\PROYECTO INTELLIJ\backendpcinfo\src\main\java\pe\edu\upc\backendpcinfo\repositories\IComponenteRepository.java

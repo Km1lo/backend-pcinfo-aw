@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.backendpcinfo.dtos.UsuarioComentarioDTO;
+import pe.edu.upc.backendpcinfo.dtos.UsuarioCuestionarioDTO;
 import pe.edu.upc.backendpcinfo.dtos.UsuarioDTO;
 import pe.edu.upc.backendpcinfo.entities.Usuario;
 import pe.edu.upc.backendpcinfo.services.IUsuarioService;
@@ -26,7 +27,7 @@ public class UsuarioController {
 
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public List<UsuarioDTO> list(){
         return uS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -66,5 +67,13 @@ public class UsuarioController {
         List<UsuarioComentarioDTO> usuarioComentarioDTOs = uS.consulta02();
         return usuarioComentarioDTOs;
     }
+
+
+    @GetMapping("/usuario-cuestionario-count")
+    public List<UsuarioCuestionarioDTO> getUsuarioCuestionarioCount(){
+        List<UsuarioCuestionarioDTO> usuarioCuestionarioDTOS = uS.consultaAnthony02();
+        return usuarioCuestionarioDTOS;
+    }
+
 
 }

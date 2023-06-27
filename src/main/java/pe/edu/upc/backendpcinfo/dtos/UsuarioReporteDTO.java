@@ -6,15 +6,21 @@ public class UsuarioReporteDTO {
     private String apellidop;
     private String descripcion;
 
+    private String estado;
+    private String apellidom;
+
     public UsuarioReporteDTO() {
     }
 
-    public UsuarioReporteDTO(String nombre, int reporteCount, String apellidop, String descripcion) {
+    public UsuarioReporteDTO(String nombre, int reporteCount, String apellidop, String descripcion, String estado, String apellidom) {
         this.nombre = nombre;
         this.reporteCount = reporteCount;
         this.apellidop = apellidop;
         this.descripcion = descripcion;
+        this.estado = estado;
+        this.apellidom = apellidom;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -46,5 +52,21 @@ public class UsuarioReporteDTO {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getApellidom() {
+        return apellidom;
+    }
+
+    public void setApellidom(String apellidom) {
+        this.apellidom = apellidom;
     }
 }

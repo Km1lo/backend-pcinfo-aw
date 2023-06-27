@@ -67,4 +67,22 @@ public class ReporteServiceImplement implements IReporteService {
     }
 
 
+
+    @Override
+    public List<UsuarioReporteDTO> consulta03() {
+        List<String[]> ReporteEstadoByUsuario = reR.getReporteEstadoByUsuario();
+        List<UsuarioReporteDTO> usuarioReporteDTOs = new ArrayList<>();
+
+        for (String[] data : ReporteEstadoByUsuario) {
+            UsuarioReporteDTO dto = new UsuarioReporteDTO();
+            dto.setNombre(data[0]);
+            dto.setApellidop(data[1]);
+            dto.setApellidom(data[2]);
+            dto.setEstado(data[3]);
+            usuarioReporteDTOs.add(dto);
+        }
+
+        return usuarioReporteDTOs;
+    }
+
 }

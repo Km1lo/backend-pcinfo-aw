@@ -1,6 +1,7 @@
 package pe.edu.upc.backendpcinfo.services;
 
 import pe.edu.upc.backendpcinfo.dtos.UsuarioComentarioDTO;
+import pe.edu.upc.backendpcinfo.dtos.UsuarioCuestionarioDTO;
 import pe.edu.upc.backendpcinfo.entities.Usuario;
 
 import java.util.List;
@@ -15,5 +16,7 @@ public interface IUsuarioService {
     public List<UsuarioComentarioDTO> consulta01();
 
     public List<UsuarioComentarioDTO> consulta02();
+
+    public List<UsuarioCuestionarioDTO> consultaAnthony02();
 
 }

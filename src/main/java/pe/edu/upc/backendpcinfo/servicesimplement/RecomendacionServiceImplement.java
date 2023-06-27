@@ -59,7 +59,7 @@ public class RecomendacionServiceImplement implements IRecomendacionService {
         {
             RecomendacionCuestionarioDTO dto=new RecomendacionCuestionarioDTO();
             dto.setTipo_form(data[0]);
-            dto.setPromedio_valoracion(Integer.parseInt(data[1]));
+            dto.setPromedio_valoracion(Double.parseDouble(data[1]));
             recomendacionCuestionarioDTOS.add(dto);
         }
         return recomendacionCuestionarioDTOS;

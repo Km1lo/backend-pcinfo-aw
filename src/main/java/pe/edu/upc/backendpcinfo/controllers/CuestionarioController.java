@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.backendpcinfo.dtos.CuestionarioDTO;
+import pe.edu.upc.backendpcinfo.dtos.UsuarioCuestionarioDTO;
 import pe.edu.upc.backendpcinfo.entities.Cuestionario;
 import pe.edu.upc.backendpcinfo.services.ICuestionarioService;
 
@@ -46,4 +47,22 @@ public class CuestionarioController {
         Cuestionario c=m.map(dto,Cuestionario.class);
         cS.insert(c);
     }
+
+
+
+    @GetMapping("/cuestionario-count")
+    public List<UsuarioCuestionarioDTO> getCuestionarioByUsuario() {
+        List<UsuarioCuestionarioDTO> usuarioCuestionarioDTOs = cS.consulta04();
+        return usuarioCuestionarioDTOs;
+    }
+
+    @GetMapping("/cuestionario-procesador")
+    public List<UsuarioCuestionarioDTO> getCuestionario1EstadoByUsuario() {
+        List<UsuarioCuestionarioDTO> UsuarioCuestionarioDTOss = cS.consulta05();
+        return UsuarioCuestionarioDTOss;}
+
+    @GetMapping("/cuestionario-procesador2")
+    public List<UsuarioCuestionarioDTO> getCuestionario2EstadoByUsuario() {
+        List<UsuarioCuestionarioDTO> UsuarioCuestionarioDTOs = cS.consulta06();
+        return UsuarioCuestionarioDTOs;}
 }
