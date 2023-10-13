@@ -25,11 +25,11 @@ public interface ICuestionarioRepository extends JpaRepository<Cuestionario,Inte
             "group by u.nombre,U.apellidop,U.apellidom", nativeQuery = true)
     List<String[]> getCuestionario1EstadoByUsuario();
 
-    @Query(value = "SELECT U.nombre,U.apellidop,U.apellidom, Count(R.id) AS Cant_Procesador\n" +
-            "FROM usuario U\n" +
+    @Query(value = "SELECT Count(DISTINCT R.id) AS Cant_Procesador\n" +
+            "FROM usuario U\n " +
             "\tinner join cuestionario R ON U.id = R.id_usuario\n" +
             "where R.marca_procesador= 'Intel'\n" +
-            "group by u.nombre,U.apellidop,U.apellidom", nativeQuery = true)
+            "group by", nativeQuery = true)
     List<String[]> getCuestionario2ByUsuario();
 
 
